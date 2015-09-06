@@ -1,13 +1,16 @@
 #!/usr/bin/env babel-node
 
-var co = require('co')
-var models = require('./lib/models')
-var dict = require('./lib/dict')
-var print = require('./lib/print')
+import Dict from './lib/dict'
+import co from 'co'
+import models, {connection} from './lib/models'
+import print from './lib/print'
 
-var q = process.argv.slice(2).join(' ')
+let q = process.argv.slice(2).join(' ')
+let dict = new Dict(q)
 
 co(function* (){
+    connection.connect()
+
     // 查询数据库
     var data = yield models.words.getByName(q);
 
@@ -16,7 +19,7 @@ co(function* (){
         print(data.translate);
     } else {
         // 查询有道词典
-        data = yield dict.query(q);
+        data = yield dict.query();
         print(data);
         var errorCode = JSON.parse(data).errorCode;
 
@@ -26,13 +29,13 @@ co(function* (){
         }
     }
 
-    models.connection.end();
+    connection.end();
 }).catch(function(err) {
     if(err.code == 'ETIMEDOUT') {
-        dict.query(q).then(print);
+        dict.query().then(print);
     } else {
-        console.error(err);
+        console.error(err)
     }
 
-    models.connection.end();
+    connection.end();
 })
