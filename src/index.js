@@ -1,4 +1,4 @@
-import Dict from './dict'
+import Dict from './Dict'
 import print from './print'
 
 const q = process.argv.slice(2).join(' ')
