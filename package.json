@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Youdao dictionary command-line tool",
   "main": "bin/index.js",
+  "bin": {
+    "youdao-dict": "./bin/index.js"
+  },
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js src"
   },
