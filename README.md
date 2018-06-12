@@ -2,14 +2,14 @@
 
 ![Alt :build](https://api.travis-ci.org/NinoFocus/YoudaoDict.svg)
 
-## 初始化
-
-```bash
-npm install
-```
-
 ## 使用方式
 
 ```bash
-node bin/index query_word
+// 安装
+npm install youzan-dict -g
+
+// 使用 
+d ok
+// 或者用
+youdao-dict ok
 ```

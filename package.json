@@ -1,13 +1,15 @@
 {
   "name": "youdao-dict",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Youdao dictionary command-line tool",
-  "main": "bin/index.js",
+  "main": "bin/d.js",
   "bin": {
-    "youdao-dict": "./bin/index.js"
+    "youdao-dict": "./bin/d.js",
+    "d": "./bin/d.js"
   },
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js src"
+    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "build": "./node_modules/rollup/bin/rollup src/index.js --format cjs --file bin/d.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +28,8 @@
   },
   "homepage": "https://github.com/NinoFocus/YoudaoDict#readme",
   "devDependencies": {
-    "babel-core": "^6.7.6",
-    "babel-preset-es2015": "^6.6.0",
     "eslint": "^2.7.0",
-    "eslint-config-airbnb": "^7.0.0"
+    "eslint-config-airbnb": "^7.0.0",
+    "rollup": "^0.60.2"
   }
 }
