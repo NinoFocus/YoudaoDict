@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import Dict from './Dict'
 import print from './print'
 

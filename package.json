@@ -1,6 +1,6 @@
 {
   "name": "youdao-dict",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Youdao dictionary command-line tool",
   "main": "bin/d.js",
   "bin": {
@@ -33,6 +33,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "rollup": "^0.60.2",
     "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-hashbang": "^1.0.1",
     "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
