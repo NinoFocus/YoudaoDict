@@ -6,7 +6,7 @@
 
 ```bash
 // 安装
-npm install youzan-dict -g
+npm install youdao-dict -g
 
 // 使用 
 d ok
